@@ -1,19 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:padding="16dp">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- 标题 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Android 四大组件学习"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <!-- ========== Activity 演示部分 ========== -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="【Activity 演示】"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#FF6200EE"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/btnLifecycle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Activity 生命周期演示"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/btnDataPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="数据传递演示"
+            android:layout_marginTop="4dp" />
+
+        <!-- ========== Service 演示部分 ========== -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="【Service 演示】"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#FF4CAF50"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/btnStartService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="启动 Service (startService)"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/btnStopService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="停止 Service"
+            android:layout_marginTop="4dp" />
+
+        <Button
+            android:id="@+id/btnBindService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="绑定 Service (bindService)"
+            android:layout_marginTop="4dp" />
+
+        <Button
+            android:id="@+id/btnCallService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="调用 Service 方法"
+            android:layout_marginTop="4dp" />
+
+        <Button
+            android:id="@+id/btnUnbindService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="解绑 Service"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/tvServiceStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Service 状态: 未启动"
+            android:textSize="14sp"
+            android:textColor="#FF666666"
+            android:layout_marginTop="8dp" />
+
+        <!-- ========== BroadcastReceiver 演示部分 ========== -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="【BroadcastReceiver 演示】"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#FFFF9800"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/btnRegisterReceiver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="注册广播接收器"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/btnSendBroadcast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="发送自定义广播"
+            android:layout_marginTop="4dp" />
+
+        <Button
+            android:id="@+id/btnUnregisterReceiver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="取消注册广播接收器"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/tvReceiverStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Receiver 状态: 未注册"
+            android:textSize="14sp"
+            android:textColor="#FF666666"
+            android:layout_marginTop="8dp" />
+
+        <!-- ========== ContentProvider 演示部分 ========== -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="【ContentProvider 演示】"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#FFE91E63"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/btnQueryProvider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="查询 ContentProvider"
+            android:layout_marginTop="8dp" />
+
+        <!-- 状态显示区域 -->
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="点击按钮开始学习四大组件..."
+            android:textSize="14sp"
+            android:background="#FFF5F5F5"
+            android:padding="12dp"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+</ScrollView>
