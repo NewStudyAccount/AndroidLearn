@@ -1,5 +1,6 @@
 package com.example.androidlearn.activity
 
+import android.os.Build
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -41,7 +42,12 @@ class ReceiveDataActivity : AppCompatActivity() {
         }
 
         // 方式三：接收对象
-        val user = intent.getParcelableExtra<User>("user")
+        val user = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            intent.getParcelableExtra("user", User::class.java)
+        } else {
+            @Suppress("DEPRECATION")
+            intent.getParcelableExtra<User>("user")
+        }
         if (user != null) {
             sb.appendLine("=== 接收对象 ===")
             sb.appendLine("姓名: ${user.name}")

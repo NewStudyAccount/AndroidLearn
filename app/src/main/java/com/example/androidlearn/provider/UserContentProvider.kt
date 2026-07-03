@@ -49,7 +49,8 @@ class UserContentProvider : ContentProvider() {
      */
     override fun onCreate(): Boolean {
         Log.d(TAG, "===== onCreate: ContentProvider 创建 =====")
-        dbHelper = UserDatabaseHelper(context!!)
+        val ctx = context ?: return false
+        dbHelper = UserDatabaseHelper(ctx)
         return true
     }
 
@@ -106,7 +107,9 @@ class UserContentProvider : ContentProvider() {
         }
 
         // 设置通知 URI，当数据变化时通知观察者
-        cursor.setNotificationUri(context?.contentResolver, uri)
+        context?.contentResolver?.let { cr ->
+            cursor.setNotificationUri(cr, uri)
+        }
         return cursor
     }
 

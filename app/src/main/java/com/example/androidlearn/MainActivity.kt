@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.content.ServiceConnection
+import android.os.Build
 import android.os.Bundle
 import android.os.IBinder
 import android.util.Log
@@ -159,7 +160,11 @@ class MainActivity : AppCompatActivity() {
                     addAction(Intent.ACTION_AIRPLANE_MODE_CHANGED)
                     addAction(MyReceiver.ACTION_CUSTOM)
                 }
-                registerReceiver(myReceiver, filter)
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                    registerReceiver(myReceiver, filter, Context.RECEIVER_NOT_EXPORTED)
+                } else {
+                    registerReceiver(myReceiver, filter)
+                }
                 isReceiverRegistered = true
                 Toast.makeText(this, "广播接收器已注册", Toast.LENGTH_SHORT).show()
                 updateReceiverStatus("广播接收器已注册")

@@ -17,12 +17,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="请观察 Logcat 中的日志输出：\n\n"
-        + "1. 打开此 Activity → 观察 onCreate, onStart, onResume\n\n"
-        + "2. 按 Home 键 → 观察 onPause, onStop\n\n"
-        + "3. 返回此 Activity → 观察 onRestart, onStart, onResume\n\n"
-        + "4. 按返回键 → 观察 onPause, onStop, onDestroy\n\n"
-        + "过滤标签: LifecycleDemo"
+        android:text="@string/lifecycle_demo_hint"
         android:textSize="16sp"
         android:lineSpacingMultiplier="1.2"
         android:background="#FFF5F5F5"

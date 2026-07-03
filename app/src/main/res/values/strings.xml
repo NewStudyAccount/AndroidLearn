@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AndroidLearn</string>
+    <string name="lifecycle_demo_hint">请观察 Logcat 中的日志输出：\n\n1. 打开此 Activity → 观察 onCreate, onStart, onResume\n\n2. 按 Home 键 → 观察 onPause, onStop\n\n3. 返回此 Activity → 观察 onRestart, onStart, onResume\n\n4. 按返回键 → 观察 onPause, onStop, onDestroy\n\n过滤标签: LifecycleDemo</string>
 </resources>
