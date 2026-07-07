@@ -15,6 +15,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androidlearn.activity.ActivityLifecycleDemo
 import com.example.androidlearn.activity.DataPassDemo
+import com.example.androidlearn.activity.RecyclerDemoActivity
 import com.example.androidlearn.receiver.MyReceiver
 import com.example.androidlearn.service.MyBindService
 import com.example.androidlearn.service.MyService
@@ -203,6 +204,13 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btnQueryProvider).setOnClickListener {
             Log.d(TAG, "点击: 查询 ContentProvider")
             queryContentProvider()
+        }
+
+        // 12. RecyclerView 综合演示
+        findViewById<Button>(R.id.btnRecyclerDemo).setOnClickListener {
+            Log.d(TAG, "点击: 打开 RecyclerView 演示")
+            val intent = Intent(this, RecyclerDemoActivity::class.java)
+            startActivity(intent)
         }
     }
 
