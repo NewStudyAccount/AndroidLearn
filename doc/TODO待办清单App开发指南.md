@@ -1,4 +1,4 @@
-﻿# TODO 待办清单 App 开发指南
+# TODO 待办清单 App 开发指南
 
 > 本文档指导你在现有 AndroidLearn 项目中，**只用已学技术**构建 TODO 待办清单 App。
 > 不需要添加任何新依赖，不需要修改 gradle 配置。
@@ -419,8 +419,8 @@ import java.util.Locale
  */
 class TodoAdapter(
     private var todos: MutableList<TodoItem>,
-    private val onToggleDone: (TodoEntity) -> Unit,
-    private val onDelete: (TodoEntity) -> Unit
+    private val onToggleDone: (TodoItem) -> Unit,
+    private val onDelete: (TodoItem) -> Unit
 ) : RecyclerView.Adapter<TodoAdapter.TodoViewHolder>() {
 
     class TodoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

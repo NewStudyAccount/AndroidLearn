@@ -14,15 +14,9 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.AndroidLearn">
-        <activity
-                android:name=".activity.ToDoActivity"
-                android:exported="false"
-                android:label="@string/title_activity_to_do"
-                android:theme="@style/Theme.AndroidLearn"/>
-        <activity
-                android:name=".ui.login.LoginActivity"
-                android:exported="false"
-                android:label="@string/title_activity_login"/> <!-- ========== Activity 注册 ========== -->
+
+
+        <!-- ========== Activity 注册 ========== -->
         <!-- 主 Activity -->
         <activity
                 android:name=".MainActivity"
@@ -45,7 +39,15 @@
                 android:exported="false"/> <!-- 选择用户 Activity -->
         <activity
                 android:name=".activity.PickUserActivity"
-                android:exported="false"/> <!-- RecyclerView 综合演示 -->
+                android:exported="false"/>
+
+        <!-- TODO 待办清单 -->
+        <activity
+                android:name=".todo.TodoActivity"
+                android:exported="false" />
+
+
+        <!-- RecyclerView 综合演示 -->
         <activity
                 android:name=".activity.RecyclerDemoActivity"
                 android:exported="false"/> <!-- ========== Service 注册 ========== -->
