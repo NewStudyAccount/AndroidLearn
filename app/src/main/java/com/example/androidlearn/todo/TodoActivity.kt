@@ -22,6 +22,7 @@ class TodoActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //关联activity_todo.xml 页面
         setContentView(R.layout.activity_todo)
 
         // 1. 初始化数据库

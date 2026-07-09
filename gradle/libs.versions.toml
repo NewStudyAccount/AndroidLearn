@@ -10,13 +10,7 @@ appcompat = "1.6.1"
 material = "1.10.0"
 activityKtx = "1.8.0"
 constraintlayout = "2.1.4"
-appcompatV7 = "28.0.0"
-design = "28.0.0"
-supportAnnotations = "28.0.0"
-constraintLayoutVersion = "2.0.4"
-livedata = "1.1.1"
-viewmodel = "1.1.1"
-lifecycleRuntimeKtx = "2.11.0"
+lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.13.0"
 composeBom = "2024.04.01"
 [libraries]
@@ -29,13 +23,9 @@ material = { group = "com.google.android.material", name = "material", version.r
 androidx-activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activityKtx" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
-appcompat-v7 = { group = "com.android.support", name = "appcompat-v7", version.ref = "appcompatV7" }
-design = { group = "com.android.support", name = "design", version.ref = "design" }
-support-annotations = { group = "com.android.support", name = "support-annotations", version.ref = "supportAnnotations" }
-constraint-layout = { group = "com.android.support.constraint", name = "constraint-layout", version.ref = "constraintLayoutVersion" }
-livedata = { group = "android.arch.lifecycle", name = "livedata", version.ref = "livedata" }
-viewmodel = { group = "android.arch.lifecycle", name = "viewmodel", version.ref = "viewmodel" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleRuntimeKtx" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
 androidx-ui = { group = "androidx.compose.ui", name = "ui" }
