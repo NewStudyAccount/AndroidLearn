@@ -351,7 +351,16 @@ app/src/main/java/.../collection/
 - 分类标签栏：LinearLayout(horizontal)，4 个 Button 平分宽度
 - 列表区域：RecyclerView，约束在标签栏下方，填满剩余空间
 
----
+
+
+  <!-- 其余按钮同理 -->
+
+  核心规则：
+  - 水平 LinearLayout 中，想均分宽度 → width="0dp" + weight="1"
+  - 垂直 LinearLayout 中，想均分高度 → height="0dp" + weight="1"
+  - 永远不要在 LinearLayout 的排列方向上用 match_parent
+
+
 
 ### 页面二：添加/编辑页 (activity_collection_add.xml)
 
@@ -456,7 +465,48 @@ rvCollection → top:tabBar底部, bottom:parent, start/end:parent (填满)
 tvEmpty    → 水平垂直居中于 rvCollection
 ```
 
+```
+  修复：高度用 0dp
+
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/rvCollection"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tabBar"
+      app:layout_constraintBottom_toBottomOf="parent" />
+
+  原理
+
+  ┌──────────────┬───────────────────────────┐
+  │   高度设置   │ ConstraintLayout 中的含义 │
+  ├──────────────┼───────────────────────────┤
+  │ match_parent │ 忽略约束，撑满父布局      │
+  ├──────────────┼───────────────────────────┤
+  │ wrap_content │ 根据内容决定高度          │
+  ├──────────────┼───────────────────────────┤
+  │ 0dp          │ 由约束决定高度 ✅         │
+  └──────────────┴───────────────────────────┘
+
+  0dp + top → tabBar下方 + bottom → parent底部 = 自动填充中间剩余空间：
+
+  ┌──────────────────┐
+  │  tvTitle          │
+  │  tabBar           │
+  │───────────────────│
+  │                   │
+  │  RecyclerView     │  ← 自动填满剩余空间
+  │                   │
+  └──────────────────┘
+
+  ▎ 记住：ConstraintLayout 中，想让约束控制尺寸就用 0dp（也叫 MATCH_CONSTRAINT）。
+```
+
+
+
 **添加页：**
+
 ```
 ivCover    → top:parent, start:parent
 etTitle    → top:ivCover顶部, start:ivCover右侧, end:parent
