@@ -1,51 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+        android:layout_height="wrap_content"
+        android:padding="12dp">
 
-
+    <!--封面图-->
     <ImageView
             android:id="@+id/ivCover"
-            android:layout_width="150sp"
-            android:layout_height="150sp"
+            android:layout_width="100dp"
+            android:layout_height="130dp"
+            android:scaleType="centerCrop"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-
-
-    <!--标题-->
-    <TextView
-            android:id="@+id/tvTitle"
-            app:layout_constraintStart_toEndOf="@+id/ivCover"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="标题"/>
-
-    <!--分类-->
-    <TextView
-            android:id="@+id/tvCategory"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    <!--评分-->
-    <RatingBar
-            android:id="@+id/ratingBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-    <!--备注-->
-    <TextView
-            android:id="@+id/tvNote"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
+            app:layout_constraintBottom_toBottomOf="parent" />
 
     <!--更多操作-->
     <Button
             android:id="@+id/btnMore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="更多"/>
+            android:text="更多"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <!--标题-->
+    <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="标题"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/btnMore"
+            app:layout_constraintStart_toEndOf="@+id/ivCover"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <!--分类-->
+    <TextView
+            android:id="@+id/tvCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="6dp"
+            android:text="分类信息"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivCover"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <!--评分-->
+    <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="6dp"
+            style="?android:attr/ratingBarStyleSmall"
+            app:layout_constraintStart_toEndOf="@+id/ivCover"
+            app:layout_constraintTop_toBottomOf="@+id/tvCategory" />
+
+    <!--备注-->
+    <TextView
+            android:id="@+id/tvNote"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="6dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="备注预览文字..."
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivCover"
+            app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

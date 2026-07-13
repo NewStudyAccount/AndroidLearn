@@ -97,6 +97,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, com.example.androidlearn.todo.TodoActivity::class.java))
         }
 
+        //btnMyFavoutite
+        findViewById<Button>(R.id.btnMyFavoutite).setOnClickListener {
+            Log.d(TAG, "点击: 打开 TODO 待办清单")
+            startActivity(Intent(this, com.example.androidlearn.collection.CollectionMainActivity::class.java))
+        }
+
         // ========== Service 演示 ==========
 
         // 3. 启动 Service (startService)

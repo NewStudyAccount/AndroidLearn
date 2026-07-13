@@ -5,7 +5,8 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".collection.CollectionAddActivity">
+        tools:context=".collection.CollectionAddActivity"
+        android:padding="12dp">
 
     <ScrollView
             android:layout_width="match_parent"
@@ -16,8 +17,8 @@
 
             <ImageView
                     android:id="@+id/ivCover"
-                    android:layout_width="150sp"
-                    android:layout_height="150sp"
+                    android:layout_width="130dp"
+                    android:layout_height="150dp"
                     android:textAlignment="center"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/textLayout"
@@ -26,7 +27,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textLayout"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/ivCover"
@@ -34,11 +35,11 @@
 
                 <EditText
                         android:id="@+id/etTitle"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:textAlignment="center"
-                        android:text="请输入标题"/>
+                        android:hint="请输入标题"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
